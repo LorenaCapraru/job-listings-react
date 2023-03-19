@@ -4,7 +4,7 @@ import React from "react";
 export default function Cards(props) {
   function createCard(card) {
     return (
-      <div className="card">
+      <div className={card.featured ? " cardActive" : "card"}>
         <div className="logo">
           <div className="image">
             <img src={card.logo} alt="company logo" />
