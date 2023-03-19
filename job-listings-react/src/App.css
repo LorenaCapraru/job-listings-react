@@ -43,14 +43,20 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 5%;
-  margin: 2% 10%;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2%;
+  margin: 1% 6%;
   border-radius: 10px;
+  background-color: white;
 }
 
 .logo {
   display: flex;
   flex-direction: row;
+  /* flex-wrap: wrap; */
+  gap: 10%;
+  align-items: center;
 }
 
 .container {
@@ -66,4 +72,71 @@ body {
 
 #header {
   height: 20%;
+}
+
+.languages span {
+  background-color: rgb(242, 250, 251);
+  color: rgb(110, 163, 163);
+  font-weight: bolder;
+  padding: 5px 10px;
+  border-radius: 5px;
+  /* padding: 2%; */
+}
+.company {
+  color: rgb(110, 163, 163);
+  font-weight: bolder;
+}
+
+.new {
+  border: 2px solid rgb(110, 163, 163);
+  background-color: rgb(110, 163, 163);
+  border-radius: 15px;
+  color: white;
+  font-weight: bolder;
+  padding: 2px 5px;
+}
+.featured {
+  border: 2px solid black;
+  background-color: black;
+  border-radius: 15px;
+  color: white;
+  font-weight: bolder;
+  padding: 2px 5px;
+}
+
+.DetailsRow2 {
+  color: black;
+  font-weight: bolder;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  width: 300px;
+}
+.DetailsRow1 {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  justify-content: center;
+  align-items: center;
+}
+.DetailsRow3,
+.DetailsRow3 ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+}
+.DetailsRow3 ul li {
+  padding-right: 20px;
+  font-size: 14px;
+  color: grey;
+  font-weight: bold;
+}
+
+.firstLi {
+  list-style-type: none;
 }
