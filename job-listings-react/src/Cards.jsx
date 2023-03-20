@@ -13,7 +13,9 @@ export default function Cards(props) {
       (el) =>
         el.role.toLowerCase().includes(search.toLowerCase()) ||
         el.level.toLowerCase().includes(search.toLowerCase()) ||
-        el.languages.includes(search.toLowerCase())
+        el.languages
+          .map((el) => el.toLowerCase())
+          .includes(search.toLowerCase())
     );
     return newArray.map((el) => createCard(el));
   }
@@ -53,15 +55,13 @@ export default function Cards(props) {
   return (
     <>
       <input
-      id='searchInput'
+        id="searchInput"
         type="search"
         value={search}
         onChange={handleClickEvent}
         className="cardLabel"
       />
-
       <div className="container">
-        {/* {search ? searchJobs : props.jobs.map((el) => createCard(el))} */}
         {search.length > 0
           ? searchJobs()
           : props.jobs.map((el) => createCard(el))}
