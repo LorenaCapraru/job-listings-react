@@ -1,10 +1,26 @@
-import React from "react";
-// import logos from `${data.map(el=>el.logo)}`;
+import React, { useState } from "react";
 
 export default function Cards(props) {
+  const [search, setSearch] = useState("");
+  function handleClickEvent(event) {
+    event.preventDefault();
+    setSearch(event.target.value);
+  }
+
+  function searchJobs() {
+    let newArray = [...props.jobs];
+    newArray = newArray.filter(
+      (el) =>
+        el.role.toLowerCase().includes(search.toLowerCase()) ||
+        el.level.toLowerCase().includes(search.toLowerCase()) ||
+        el.languages.includes(search.toLowerCase())
+    );
+    return newArray.map((el) => createCard(el));
+  }
+
   function createCard(card) {
     return (
-      <div className={card.featured ? " cardActive" : "card"}>
+      <div className={card.featured ? " cardActive" : "card"} key={card.id}>
         <div className="logo">
           <div className="image">
             <img src={card.logo} alt="company logo" />
@@ -17,24 +33,38 @@ export default function Cards(props) {
                 <span className="featured">FEATURED</span>
               ) : null}
             </div>
-            <div className="DetailsRow2">{card.position}</div>
+            <div className="DetailsRow2" onClick={handleClickEvent}>
+              {card.position}
+            </div>
             <div className="DetailsRow3">
-              <ul>
-                <li className="firstLi">{card.postedAt}</li>{" "}
-                <li>{card.contract}</li> <li> {card.location}</li>
-              </ul>
+              <span className="firstLi">{card.postedAt}</span>{" "}
+              <span>{card.contract}</span> <span> {card.location}</span>
             </div>
           </div>
         </div>
         <div className="languages">
-          <span>{card.role}</span> <span>{card.level}</span>{" "}
-          <span>{card.languages}</span>
+          <span>{card.role}</span>
+          <span>{card.level}</span> <span>{card.languages}</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="container">{props.jobs.map((el) => createCard(el))}</div>
+    <>
+      <input
+        type="search"
+        value={search}
+        onChange={handleClickEvent}
+        className="cardLabel"
+      />
+
+      <div className="container">
+        {/* {search ? searchJobs : props.jobs.map((el) => createCard(el))} */}
+        {search.length > 0
+          ? searchJobs()
+          : props.jobs.map((el) => createCard(el))}
+      </div>
+    </>
   );
 }

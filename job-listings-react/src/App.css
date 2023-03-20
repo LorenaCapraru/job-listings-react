@@ -94,7 +94,6 @@ body {
   font-weight: bolder;
   padding: 5px 10px;
   border-radius: 5px;
-  /* padding: 2%; */
 }
 .company {
   color: rgb(110, 163, 163);
@@ -145,7 +144,7 @@ body {
   flex-direction: row;
   padding: 0px;
 }
-.DetailsRow3 ul li {
+.DetailsRow3 span {
   padding-right: 20px;
   font-size: 14px;
   color: grey;
@@ -155,3 +154,45 @@ body {
 .firstLi {
   list-style-type: none;
 }
+
+.cardLabel {
+  box-shadow: -3px 31px 36px -24px rgba(110, 163, 163, 0.5),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2%;
+  gap: 10px;
+  /* margin: 1% 6%; */
+  border-radius: 10px;
+  background-color: white;
+  margin-top: -50px;
+  margin-left: 6%;
+  margin-right: 6%;
+  position: absolute;
+  z-index: 1;
+  width: 84%;
+}
+.cardLabel span {
+  background-color: rgb(242, 250, 251);
+  color: rgb(110, 163, 163);
+  font-weight: bolder;
+  padding: 5px 10px;
+}
+.cardLabel .filterX {
+  color: rgb(242, 250, 251);
+  background-color: rgb(110, 163, 163);
+  font-weight: bolder;
+  padding: 5px 10px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.cardLabel .filterX:hover {
+  background-color: #282c34;
+}
+/* .filterX {
+  
+} */
