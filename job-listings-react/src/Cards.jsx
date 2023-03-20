@@ -53,6 +53,7 @@ export default function Cards(props) {
   return (
     <>
       <input
+      id='searchInput'
         type="search"
         value={search}
         onChange={handleClickEvent}

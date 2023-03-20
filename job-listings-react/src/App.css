@@ -193,6 +193,7 @@ body {
 .cardLabel .filterX:hover {
   background-color: #282c34;
 }
-/* .filterX {
-  
-} */
+
+#searchInput {
+  border: none;
+}
